@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String to Variables</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+<body>
+    <div class="heading">Function Generator</div>
+    <input class="input-field" type="text" id="inputString" placeholder="insert parameters here">
+    <button class="convert-btn" onclick="convertStringToVariables()">generate function</button>
+    <p id="results"></p>
+
+    <div class="heading2">Output:</div>
+  
+  <div class="output-container">
+    <div class="out" id="function"></div>
+    <button class="copy">copy</button>
+  </div>
+</body>
+<script>
+    document.querySelector('.copy').addEventListener('click', function() {
+        // Get the content of the div
+        const content = document.getElementById('function').innerText;
+    
+        // Create a temporary textarea element
+        const textarea = document.createElement('textarea');
+        textarea.value = content;
+        document.body.appendChild(textarea);
+    
+        // Select the content of the textarea
+        textarea.select();
+        textarea.setSelectionRange(0, 99999); // For mobile devices
+    
+        // Copy the selected content
+        document.execCommand('copy');
+    
+        // Remove the temporary textarea element
+        document.body.removeChild(textarea);
+    
+        
+    });
+    </script>
+
+
+</html>
